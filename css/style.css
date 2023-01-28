@@ -3,7 +3,7 @@
 }
 
 body {
-    background-image: url(/pic/spaceship.jpg);
+    background-image: url(pic/spaceship.jpg);
     background-size: cover;
     background-color: rgb(40, 40, 52);
 }
