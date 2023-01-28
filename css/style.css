@@ -3,23 +3,33 @@
 }
 
 body {
-    background-color: rgb(112, 174, 174);
+    background-image: url(/pic/spaceship.jpg);
+    background-size: cover;
+    background-color: rgb(40, 40, 52);
 }
 
 h1 {
     text-align: center;
-    padding: 10px
+    padding: 10px;
+    color: rgba(248, 174, 25, 0.888);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 header {
     padding: 10px;
-    height: 100px;
-    text-align: center;
+    width: 300px;
+    margin: auto;
     font-size: larger;
+    color: rgb(100, 223, 87);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgb(71, 64, 64, 0.5);
+    transition: 10ms;
 }
 
 table {
     margin: auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .sky {
@@ -28,17 +38,23 @@ table {
     height: 30px;
     padding: 2px;
     border-radius: 10%;
-    background-color: antiquewhite;
+    background-color: rgba(72, 78, 48, 0.7);
+    transition: 100ms;
+
 }
 
 .modal {
     display: none;
     text-align: center;
-    background-color: rgb(187, 88, 88);
+    background-color: rgb(81, 41, 41);
     border: 5px solid white;
     width: 300px;
     padding: 20px;
     position: absolute;
     top: 300px;
     left: calc(50% - 175px);
+}
+
+.song {
+    margin: auto;
 }

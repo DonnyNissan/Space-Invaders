@@ -47,7 +47,7 @@ function setInitVals() {
     elModal.style.display = 'none'
     gISAliensRight = true
     gAliensTopRowIdx = 1
-    gAliensBottomRowIdx = 5
+    gAliensBottomRowIdx = 4
     gAliensLeftColIdx = 3
     gAliensRightColIdx = 10
     gIsAliensFreez = false
@@ -88,6 +88,9 @@ function hitCandy(hitPos) {
     renderCell(hitPos, '')
     renderHeader()
     gIsAliensFreez = true
+    var audio = new Audio('sound/invaderkilled.wav')
+    audio.volume = 0.1
+    audio.play()
     setTimeout(() => {
         gIsAliensFreez = false
         moveAliens()

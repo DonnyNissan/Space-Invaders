@@ -26,6 +26,9 @@ function hitAlien(hitPos) {
     gScore += 10
     renderCell(hitPos, '')
     renderHeader()
+    var audio = new Audio('sound/invaderkilled.wav')
+    audio.volume = 0.1
+    audio.play()
     if (gGame.aliencount === 0) gameOver(1)
 }
 
@@ -78,9 +81,22 @@ function shiftBoardLeft() {
 
 function shiftBoardDown() {
     if (gIsAliensFreez) return
-    if (gAliensBottomRowIdx > HERO_ROW - 1) {
-        lifeDown()
-        return
+    console.log('gAliensBottomRowIdx : ', gAliensBottomRowIdx)
+    var isRowEmpty = true
+    for (var x = 0; x < gBoard[0].length; x++) {
+        if (gBoard[gAliensBottomRowIdx][x].gameElement === 'alien') {
+            isRowEmpty = false
+        }
+    }
+    if (isRowEmpty) {
+        gAliensBottomRowIdx--
+        console.log('Row down')
+    }
+    for (var y = 0; y < gBoard[0].length; y++) {
+        if (gBoard[HERO_ROW - 1][y].gameElement === 'alien') {
+            lifeDown()
+            return
+        }
     }
     var copyBoard = copyMat(gBoard)
     for (var i = gAliensTopRowIdx - 1; i < gAliensBottomRowIdx + 1; i++) {
@@ -93,9 +109,4 @@ function shiftBoardDown() {
     gAliensInterval = setTimeout(moveAliens, ALIEN_SPEED)
     gAliensTopRowIdx++
     gAliensBottomRowIdx++
-}
-
-
-function checkAlienBox() {
-
 }

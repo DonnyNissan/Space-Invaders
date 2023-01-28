@@ -6,6 +6,9 @@ var gHero
 
 function shoot(laserColl) {
     if (gHero.isShoot) return
+    var audio = new Audio('sound/shoot.wav')
+    audio.volume = 0.1
+    audio.play()
     var i = HERO_ROW - 1
     var laserPos = { i: i, j: laserColl }
     gHero.isShoot = setInterval(() => {
