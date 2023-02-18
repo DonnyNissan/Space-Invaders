@@ -1,0 +1,21 @@
+.main-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    max-width: 900px;
+    margin: auto;
+}
+
+.img-gallery {
+    grid-column: 1/2;
+}
+
+.canvas-container {
+    grid-column: 1/2;
+}
+
+.box-layout {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}

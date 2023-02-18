@@ -1,0 +1,49 @@
+@import url(layouts.css);
+@import url(gallery.css);
+@import url(meme.css);
+@import url(mq.css);
+
+
+/* /////////////////////////////////////////////////// */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.main-nav {
+    display: grid;
+    grid-auto-flow: column;
+    background-color: rgb(224, 233, 230);
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.logo {
+    width: 50px;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.link {
+    margin-right: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.main-footer {
+    background-color: rgb(189, 123, 123);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}

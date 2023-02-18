@@ -5,31 +5,78 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Space Invaders</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Memes</title>
 </head>
 
-<body onload="init()" onkeydown="handleKey(event)">
-    <h1>Space Invaders</h1>
-    <header>
-        Aliens: <span class="aliens"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        Score: <span class="score"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        Lifes: <span class="life"></span>
-    </header><br><br>
+<body onload="init()">
 
-    <table>
-    </table>
+    <nav class="main-nav">
+        <img class="logo" src="logo/trollface.png" alt="logo">
+        <div class="links">
+            <a href="#" onclick="init()" class="nav-link">Images Gallery</a>
+            <a href="#" onclick="onGenerateMeme()" class="nav-link">Generate Meme</a>
+            <a href="#" class="nav-link">Saved Memes</a>
+        </div>
+    </nav>
 
-    <div class="modal">
-        <h2 class="user-msg"></h2>
-        <button class="restart-btn" onclick="init()">Restart</button>
-    </div>
+    <main class="main-layout">
+        <div class="gallery-main">
+            <h1>Select a Photo to Edit</h1>
+            <div class="img-container">
+            </div>
+        </div>
 
-    <script src="js/util.js"></script>
-    <script src="js/aliens.js"></script>
-    <script src="js/hero.js"></script>
-    <script src="js/app.js"></script>
+        <div class="canvas-container">
+            <canvas id="my-canvas" height="400" width="400">
+            </canvas>
+        </div>
+
+        <div class="control-box box-layout">
+
+            <input type="text" class="user-text" placeholder="Enter text here">
+
+            <div class="main-control">
+                <button class="choose-line" onclick="onSwitchLines()">Edit: <span>Top</span> Line</button>
+                <button class="plus-btn" onclick="onAddTextLine()"><img src="icons/plus.png"></button>
+                <button class="delete-btn" onclick="onClearText()"><img src="icons/delete.png"></button>
+            </div>
+
+            <div>
+                <div class="text-size-align">
+                    <button class="bigger-btn" onclick="onChangeFontSize(+4)"><img src="icons/bigger.png"></button>
+                    <button class="smaller-btn" onclick="onChangeFontSize(-4)"><img src="icons/smaller.png"></button>
+                    <button class="align-btn" onclick="onSetAlign('left')"><img src="icons/align_left.png"></button>
+                    <button class="align-btn" onclick="onSetAlign('center')"><img src="icons/align_center.png"></button>
+                    <button class="align-btn" onclick="onSetAlign('right')"><img src="icons/align_right.png"></button>
+                </div>
+
+                <div class="font-family-color">
+                    <select name="choose-font" onchange="onSetFont(value)">
+                        <option value="Impact">Impact</option>
+                        <option value="Arial">Arial</option>
+                        <option value="Lucida Sans">Lucida Sans</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                    </select>
+                    <input onchange="onChangeColor(this.value)" type="color" name="text-color" value="#DDDDDD">
+                </div>
+            </div>
+
+
+            <div>
+                <a href="#" onclick="downloadCanvas(this)" download="file-name">Download</a>
+            </div>
+    </main>
+
+    <footer class="main-footer">
+        Coffee rights: Don Nissan &#169
+    </footer>
+
+    <script src="js/utils.js"></script>
+    <script src="js/memeService.js"></script>
+    <script src="js/memeController.js"></script>
+    <script src="js/galleryController.js"></script>
+    </script>
 </body>
-
 
 </html>

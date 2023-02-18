@@ -1,0 +1,49 @@
+.canvas-container {
+    display: none;
+    min-width: 400px;
+    max-width: 450px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgb(90, 77, 103);
+}
+
+.control-box {
+    display: none;
+    min-width: 400px;
+    max-width: 450px;
+    min-height: 400px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: bisque;
+}
+
+.control-box button {
+    margin: 5px;
+    padding: 5px;
+}
+
+.choose-line {
+    height: 30px;
+}
+
+.plus-btn img {
+    height: 30px;
+}
+
+.bigger-btn img {
+    height: 30px;
+}
+
+.smaller-btn img {
+    height: 30px;
+}
+
+.delete-btn img {
+    height: 30px;
+}
+
+.align-btn img {
+    width: 30px;
+}
